@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>hellow world appID:462910531970000 for login</h1>
+    <h1>hellow world for login</h1>
 
     <div>testing fb login </div>
     <a onclick="statusCheck()">
@@ -55,7 +55,7 @@
                     console.log(response);
                     console.log('data:' + response.data)
                     console.log('data2:' + response.data.data)
-                    console.log('result:' + response.data.data[0],results)
+                    console.log('result:' + response.data.data[0].results)
                 })
                 .catch(error => {
                     //document.getElementById('boom').innerText = 'error';
