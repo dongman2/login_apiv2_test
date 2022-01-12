@@ -1,1 +1,56 @@
-<h1>#Welcome to Login / Reporting API v2.0 test page</h1>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>hellow world</h1>
+    
+    <div>testing fb login </div>
+  <a onclick="statusCheck()"><font color="blue">status check</font></a> <br/><br/><br/>
+  <a onclick="login()"><font color="red">Login again</font></a> <br/>
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '342887667379703',
+                cookie: true,
+                xfbml: true,
+                version: 'v10.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+        function statusCheck() {
+            FB.getLoginStatus(function (response) {
+                console.log(response);
+                //document.writeln("login check")
+            });
+            
+        }
+
+        function login() {
+            FB.login(function (response) {
+                console.log(response);
+            },{scope:'email, public_profile, read_audience_network_insights, read_insights'});
+            
+        }
+    </script>
+
+
+</body>
+
+</html>
