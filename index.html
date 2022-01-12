@@ -15,7 +15,7 @@
     </a> <br /><br /><br />
     <a onclick="login()">
         <font color="red">Login again</font>
-    </a> <br />
+    </a> <br /><br/><br/>
 
     <button onclick="query_report()">query report</button>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -56,8 +56,9 @@
                     console.log('data:' + response.data)
                     console.log('data2:' + response.data.data)
                     console.log('time:' + response.data.data[0].results[0].time)
-                    console.log('breakdowns:' + response.data.data[0].results[0].breakdowns[0].key+":"+response.data.data[0].results[0].breakdowns[0].key)
+                    console.log('breakdowns:' + response.data.data[0].results[0].breakdowns[0].key+":"+response.data.data[0].results[0].breakdowns[0].value)
                     console.log('value:' + response.data.data[0].results[0].value)
+                    console.log('stringfy result'+JSON.stringify(response.data))
                 })
                 .catch(error => {
                     //document.getElementById('boom').innerText = 'error';
