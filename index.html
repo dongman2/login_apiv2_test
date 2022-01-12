@@ -4,6 +4,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <style>
+        #result {
+            background-color: yellow;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,9 +20,11 @@
     </a> <br /><br /><br />
     <a onclick="login()">
         <font color="red">Login again</font>
-    </a> <br /><br/><br/>
+    </a> <br /><br /><br />
 
     <button onclick="query_report()">query report</button>
+    <br/><br/>
+    <div id='result'>result here</div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
@@ -56,9 +63,10 @@
                     console.log('data:' + response.data)
                     console.log('data2:' + response.data.data)
                     console.log('time:' + response.data.data[0].results[0].time)
-                    console.log('breakdowns:' + response.data.data[0].results[0].breakdowns[0].key+":"+response.data.data[0].results[0].breakdowns[0].value)
+                    console.log('breakdowns:' + response.data.data[0].results[0].breakdowns[0].key + ":" + response.data.data[0].results[0].breakdowns[0].value)
                     console.log('value:' + response.data.data[0].results[0].value)
-                    console.log('stringfy result'+JSON.stringify(response.data))
+                    console.log('stringfy result' + JSON.stringify(response.data))
+                    document.getElementById('boom').innerText = JSON.stringify(response.data)
                 })
                 .catch(error => {
                     //document.getElementById('boom').innerText = 'error';
