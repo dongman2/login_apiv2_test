@@ -18,6 +18,7 @@
     </a> <br />
 
     <script>
+    var accessToken = '0'
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '462910531970000',
@@ -42,6 +43,8 @@
         function statusCheck() {
             FB.getLoginStatus(function (response) {
                 console.log(response);
+                accessToken = response.authResponse.accessToken;
+                console.log('token:'+accessToken);
 
                 // console.log("below is result from reporting api v2 using token got from login");
                 // fetch("https://graph.facebook.com/v5.0/303864140097729/adnetworkanalytics/?access_token=EAAE32sGcrfcBAPcNz2FiuPmMc3lOnarzYJwz4w0TpbHWLCpZAbPxOivjG2so4sxrB8aj3qJd6rAKpax1ZADG96PT1dyf9n9vfZAKYtNEvZA6o3hoHgE5DYgD4VZAreF6Jq3HX0yDP6656KuyAfBasM7yc7UbNlmhlZAdULIx1qT75qFMicubz4wJvLRtb7fSwrvmxS2f62ZBHDJtLYk0cu1&metrics=[%27fb_ad_network_imp%27,%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03").then((response) =>
