@@ -2,12 +2,14 @@
 <html>
 
 <head>
-
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 </head>
 
 <body>
-    <h1>hellow world</h1>
-    
+    <h1>hellow world appID:462910531970000 for login</h1>
+
     <div>testing fb login </div>
   <a onclick="statusCheck()"><font color="blue">status check</font></a> <br/><br/><br/>
   <a onclick="login()"><font color="red">Login again</font></a> <br/>
@@ -15,7 +17,7 @@
     <script>
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '342887667379703',
+                appId: '462910531970000',
                 cookie: true,
                 xfbml: true,
                 version: 'v10.0'
@@ -39,14 +41,14 @@
                 console.log(response);
                 //document.writeln("login check")
             });
-            
+
         }
 
         function login() {
             FB.login(function (response) {
                 console.log(response);
             },{scope:'email, public_profile, read_audience_network_insights, read_insights'});
-            
+
         }
     </script>
 
