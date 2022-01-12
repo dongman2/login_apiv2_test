@@ -6,7 +6,7 @@
     <meta http-equiv="Expires" content="0" />
     <style>
         #result {
-            background-color: yellow;
+            background-color: grey;
         }
     </style>
 </head>
@@ -66,7 +66,7 @@
                     console.log('breakdowns:' + response.data.data[0].results[0].breakdowns[0].key + ":" + response.data.data[0].results[0].breakdowns[0].value)
                     console.log('value:' + response.data.data[0].results[0].value)
                     console.log('stringfy result' + JSON.stringify(response.data))
-                    document.getElementById('boom').innerText = JSON.stringify(response.data)
+                    document.getElementById('result').innerText = JSON.stringify(response.data)
                 })
                 .catch(error => {
                     //document.getElementById('boom').innerText = 'error';
