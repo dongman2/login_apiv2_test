@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <h1>hellow world for login</h1>
+    <h1>hellow world for login</h1><br/>
 
-    <div>testing fb login </div>
+    
     <button onclick="statusCheck()">
        status check
     </button> <br /><br /><br />
     <button onclick="login()">
-       Login 
+       Login
     </button> <br /><br /><br />
 
     <button onclick="query_report()">query report</button>
@@ -52,6 +52,7 @@
         }(document, 'script', 'facebook-jssdk'));
 
         function query_report() {
+            rURL = 'https://graph.facebook.com/v5.0/2290993290983213/adnetworkanalytics/?access_token=' + accessToken + '&metrics=[%27fb_ad_network_imp%27%2C%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03'
             axios({
                 method: 'get', //통신 방식
                 url: rURL, //통신할 페이지
@@ -74,24 +75,6 @@
                 console.log(response);
                 accessToken = response.authResponse.accessToken;
                 console.log('token:' + accessToken);
-                rURL = 'https://graph.facebook.com/v5.0/2290993290983213/adnetworkanalytics/?access_token=' + accessToken + '&metrics=[%27fb_ad_network_imp%27%2C%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03'
-
-
-                // axios({
-                //     method: 'get', //통신 방식
-                //     url: rURL, //통신할 페이지
-                //     data: {} //인자로 보낼 데이터
-                // })
-                //     .then(response => {
-                //         // document.getElementById('boom').innerText = response.data.num;
-                //         console.log(response);
-                //         console.log('data:'+response.data)
-                //         console.log('result:'+response.data.results)
-                //     })
-                //     .catch(error => {
-                //         //document.getElementById('boom').innerText = 'error';
-                //         console.log(error);
-                //     })
             });
 
         }
