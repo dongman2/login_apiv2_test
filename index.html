@@ -47,7 +47,7 @@
                 console.log(response);
                 accessToken = response.authResponse.accessToken;
                 console.log('token:' + accessToken);
-                rURL='https://graph.facebook.com/v5.0/303864140097729/adnetworkanalytics/?access_token='+accessToken+'&metrics=[%27fb_ad_network_imp%27%2C%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03'
+                rURL='https://graph.facebook.com/v5.0/2290993290983213/adnetworkanalytics/?access_token='+accessToken+'&metrics=[%27fb_ad_network_imp%27%2C%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03'
 
                 // console.log("below is result from reporting api v2 using token got from login");
                 // fetch("https://graph.facebook.com/v5.0/303864140097729/adnetworkanalytics/?access_token=EAAGlA8HSI9ABAO8hcZAZAwTBZCYZCTM4ZC2EMmMRYZC49od3XZC37E3wNVpP3U9VAtmfS7DgqUuertOabpgwms9qDSDlYwEPJC68ZBkZBRj15pcAmp0USMK5JG4ZAcJ5q4zFvZCgEMgQ25kemZApwHOxFMZBfJNqag2674d79pjxqCcZAAWUKUwMECgTToIzgMbGv96ZA3wui2lCqKZA6a5YcktgzeZAT0njgnWpz0ZBMZD&metrics=[%27fb_ad_network_imp%27,%27fb_ad_network_click%27]&breakdowns=[%27platform%27,%20%27placement%27]&since=2020-11-03&until=2020-11-03", {
@@ -70,6 +70,7 @@
                     .then(response => {
                         // document.getElementById('boom').innerText = response.data.num;
                         console.log(response);
+                        console.log('result:'+response.data.result)
                     })
                     .catch(error => {
                         //document.getElementById('boom').innerText = 'error';
